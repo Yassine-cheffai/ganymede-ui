@@ -13,6 +13,7 @@ export default function Bar() {
             Ganymede
           </Typography>
           <Button color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
         </Toolbar>
       </AppBar>
     </Box>
