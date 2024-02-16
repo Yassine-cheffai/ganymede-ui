@@ -4,7 +4,7 @@ import "./i18n";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { deepOrange, blue } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import Root from "./routes/root";
 import LandingPage from "./routes/landingpage";
 import Coachs from "./routes/list-coachs";

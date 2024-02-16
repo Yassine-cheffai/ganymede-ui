@@ -9,6 +9,7 @@ export default function CoachCard() {
       <Grid container spacing={2}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
           <img
+            alt="coach"
             style={{
               height: "120px",
               width: "120px",
