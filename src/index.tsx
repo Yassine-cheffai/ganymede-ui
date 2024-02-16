@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { deepOrange, blue } from "@mui/material/colors";
 import Root from "./routes/root";
+import Coachs from "./routes/list-coachs";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -19,6 +20,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "coachs/",
+        element: <Coachs />,
+      },
+    ],
   },
 ]);
 const root = ReactDOM.createRoot(
