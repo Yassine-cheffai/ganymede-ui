@@ -6,13 +6,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { deepOrange, blue } from "@mui/material/colors";
 import Root from "./routes/root";
+import LandingPage from "./routes/landingpage";
 import Coachs from "./routes/list-coachs";
 import ErrorPage from "./error-page";
 import "./index.css";
 
 const theme = createTheme({
   palette: {
-    primary: deepOrange,
+    // primary: deepOrange,
+    primary: {
+      main: "#f07c0b",
+    },
     secondary: { main: blue[500] },
   },
 });
@@ -22,6 +26,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "",
+        element: <LandingPage />,
+      },
       {
         path: "coachs/",
         element: <Coachs />,

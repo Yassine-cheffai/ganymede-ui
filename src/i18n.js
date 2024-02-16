@@ -13,6 +13,7 @@ i18n
           "Reserve a private lesson": "Reserve a private lesson",
           "Login": "Login",
           "Sign up": "Sign up",
+          "Welcome to FoxFit, Your Online Sport Platform": "Welcome to FoxFit, Your Online Sport Platform"
         },
       },
       fr: {
@@ -20,6 +21,7 @@ i18n
           "Reserve a private lesson": "Réserver un cours privé",
           "Login": "Se connecter",
           "Sign up": "S'inscrire",
+          "Welcome to FoxFit, Your Online Sport Platform": "Bienvenue sur FoxFit, Votre Plateforme de Sport en Ligne"
         },
       }
     },
