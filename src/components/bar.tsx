@@ -4,8 +4,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Bar() {
+  const { t } = useTranslation();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -20,11 +22,11 @@ export default function Bar() {
               to={"coachs/"}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              reserver un cours prive
+              {t("Reserve a private lesson")}
             </Link>
           </Button>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Signup</Button>
+          <Button color="inherit">{t("Login")}</Button>
+          <Button color="inherit">{t("Sign up")}</Button>
         </Toolbar>
       </AppBar>
     </Box>
