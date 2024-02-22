@@ -9,7 +9,7 @@ export default function LandingPage() {
     <Box>
       <Grid container spacing={2}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
-          <img src="foxlogo.png" alt="fox yoga"></img>
+          <img src="foxlogo.png" alt="fox yoga" className="up-down-animation" />
         </Grid>
         <Grid item xs={12} style={{ textAlign: "center" }}>
           <Typography variant="h4">
