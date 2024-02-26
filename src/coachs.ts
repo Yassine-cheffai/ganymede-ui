@@ -4,19 +4,19 @@ export const getCoachs = async () => {
       id: 1,
       fullName: "Yuri boyka",
       rating: 4.5,
-      specialities: ["box git", "yoga"],
+      specialities: ["boxing", "wrestling", "karate", "bjj"],
     },
     {
       id: 2,
       fullName: "Tony Jaa",
       rating: 4.5,
-      specialities: ["box git", "yoga"],
+      specialities: ["box thai"],
     },
     {
       id: 3,
       fullName: "Jason statham",
       rating: 4.5,
-      specialities: ["box git", "yoga"],
+      specialities: ["boxing", "kicking"],
     },
   ];
 };

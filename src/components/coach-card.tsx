@@ -2,8 +2,15 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { formatSpecialities } from "../utils/utils";
+import { CoachType } from "../utils/types";
 
-export default function CoachCard() {
+export default function CoachCard({
+  id,
+  fullName,
+  rating,
+  specialities,
+}: CoachType) {
   return (
     <Paper variant="outlined">
       <Grid container spacing={2}>
@@ -20,15 +27,17 @@ export default function CoachCard() {
           ></img>
         </Grid>
         <Grid item xs={12} style={{ textAlign: "center" }}>
-          <Typography variant="h5">Yuri Boyka</Typography>
+          <Typography variant="h5">{fullName}</Typography>
           <Rating
             name="read-only"
-            value={4.5}
+            value={rating}
             readOnly
             precision={0.5}
             size="small"
           />
-          <Typography variant="body1">box fit, yoga ...</Typography>
+          <Typography variant="body1">
+            {formatSpecialities(specialities)}
+          </Typography>
         </Grid>
       </Grid>
     </Paper>

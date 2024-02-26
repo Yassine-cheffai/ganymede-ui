@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
 import Root from "./routes/root";
 import LandingPage from "./routes/landingpage";
-import Coachs from "./routes/list-coachs";
+import Coachs, { loader as coachsLoader } from "./routes/list-coachs";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "coachs/",
         element: <Coachs />,
+        loader: coachsLoader,
       },
     ],
   },
