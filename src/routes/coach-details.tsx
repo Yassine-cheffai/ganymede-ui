@@ -4,9 +4,19 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
+import { useLoaderData } from "react-router-dom";
+
+import { getCoach } from "../coachs";
+import { CoachDetailsType } from "../utils/types";
+
+export async function loader({ params }: any) {
+  const coach: CoachDetailsType = await getCoach(params.coachId);
+  return { coach };
+}
 
 export default function CoachDetails() {
   const { t } = useTranslation();
+  const { coach } = useLoaderData() as { coach: CoachDetailsType };
 
   return (
     <Box>
@@ -24,10 +34,10 @@ export default function CoachDetails() {
             ></img>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <Typography variant="h5">Yuri Boyka</Typography>
-            <Typography variant="subtitle1">email: boyka@yandex.ru</Typography>
+            <Typography variant="h5">{coach.fullName}</Typography>
+            <Typography variant="subtitle1">email: {coach.email}</Typography>
             <Typography variant="subtitle1">
-              instagram: instagram/boyka
+              instagram: {coach.instagram}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} style={{ textAlign: "right" }}>
@@ -37,12 +47,7 @@ export default function CoachDetails() {
           <Grid item xs={8} sx={{ mt: 2, ml: 3 }}>
             <Box>
               <b>{t("Description")}</b>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur sapien est, malesuada et sapien vitae, pellentesque
-                dictum diam. Fusce egestas id justo ut auctor. Aenean felis
-                nunc, laoreet sed sagittis vitae,
-              </p>
+              <p>{coach.description}</p>
             </Box>
           </Grid>
           <Grid item xs={2} sx={{ mt: 2, ml: 6 }}>
@@ -50,9 +55,9 @@ export default function CoachDetails() {
               <b>{t("Specialities") + ":"}</b>
               <p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  <li>box fit</li>
-                  <li>yoga</li>
-                  <li>art martiaux</li>
+                  {coach.specialities.map((speciality) => (
+                    <li>{speciality}</li>
+                  ))}
                 </ul>
               </p>
             </Box>
