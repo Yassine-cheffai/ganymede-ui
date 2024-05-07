@@ -8,6 +8,7 @@ import { useLoaderData } from "react-router-dom";
 
 import { getCoach } from "../coachs";
 import { CoachDetailsType } from "../utils/types";
+import styles from "../components/components.module.css";
 
 export async function loader({ params }: any) {
   const coach: CoachDetailsType = await getCoach(params.coachId);
@@ -25,11 +26,7 @@ export default function CoachDetails() {
           <Grid item xs={12} sm={3}>
             <img
               alt="coach"
-              style={{
-                height: "180px",
-                width: "180px",
-                borderRadius: "10px",
-              }}
+              className={styles.profilePictureDetails}
               src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg"
             ></img>
           </Grid>

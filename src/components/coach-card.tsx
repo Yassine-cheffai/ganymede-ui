@@ -20,12 +20,7 @@ export default function CoachCard({
           <NavLink to={`${id}`}>
             <img
               alt="coach"
-              style={{
-                height: "120px",
-                width: "120px",
-                borderRadius: "10px",
-                marginTop: "20px",
-              }}
+              className={styles.profilePicture}
               src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg"
             ></img>
           </NavLink>
