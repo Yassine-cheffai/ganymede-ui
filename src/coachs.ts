@@ -1,35 +1,39 @@
+import PocketBase from "pocketbase";
+
+import { CoachType, CoachDetailsType } from "./utils/types";
+
+const pb = new PocketBase("http://127.0.0.1:8090");
+
 export const getCoachs = async () => {
-  return [
-    {
-      id: 1,
-      fullName: "Yuri boyka",
-      rating: 4.5,
-      specialities: ["boxing", "wrestling", "karate", "bjj"],
-    },
-    {
-      id: 2,
-      fullName: "Tony Jaa",
-      rating: 4.5,
-      specialities: ["box thai"],
-    },
-    {
-      id: 3,
-      fullName: "Jason statham",
-      rating: 4.5,
-      specialities: ["boxing", "kicking"],
-    },
-  ];
+  const records = await pb.collection("coachs").getFullList({
+    sort: "-created",
+    fields: "id,fullName,rating,specialities",
+  });
+
+  let result: CoachType[] = [];
+  records.forEach((record) => {
+    result.push({
+      id: record.id,
+      fullName: record.fullName,
+      rating: record.rating,
+      specialities: record.specialities,
+    });
+  });
+  return result;
 };
 
-export const getCoach = async (id: number) => {
-  return {
-    id: 1,
-    fullName: "Yuri boyka " + id,
-    rating: 4.5,
-    specialities: ["boxing", "wrestling", "karate", "bjj"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Curabitur sapien est, malesuada et sapien vitae, pellentesque dictum diam. Fusce egestas id justo ut auctor. Aenean felis nunc, laoreet sed sagittis vitae",
-    email: "boyka@yandex.ru",
-    instagram: "instagram/boyka",
+export const getCoach = async (id: string) => {
+  const record = await pb.collection("coachs").getOne(id, {
+    fields: "id,fullName,rating,specialities,description,email,instagram",
+  });
+  let result: CoachDetailsType = {
+    id: record.id,
+    fullName: record.fullName,
+    rating: record.rating,
+    specialities: record.specialities,
+    description: record.description,
+    email: record.email,
+    instagram: record.instagram,
   };
+  return result;
 };

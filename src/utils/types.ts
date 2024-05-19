@@ -1,12 +1,12 @@
 export type CoachType = {
-  id: number;
+  id: string;
   fullName: string;
   rating: number;
   specialities: string[];
 };
 
 export type CoachDetailsType = {
-  id: number;
+  id: string;
   fullName: string;
   rating: number;
   specialities: string[];
