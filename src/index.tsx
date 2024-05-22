@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
 import Root from "./routes/root";
 import LandingPage from "./routes/landingpage";
+import SignUp from "./routes/signup";
 import Coachs, { loader as coachsLoader } from "./routes/list-coachs";
 import CoachDetails, {
   loader as coachDetailsLoader,
@@ -43,18 +44,22 @@ const router = createBrowserRouter([
         element: <CoachDetails />,
         loader: coachDetailsLoader,
       },
+      {
+        path: "signup/",
+        element: <SignUp />,
+      },
     ],
   },
 ]);
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById("root") as HTMLElement,
 );
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

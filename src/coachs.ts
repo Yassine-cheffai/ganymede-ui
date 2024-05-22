@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 
 import { CoachType, CoachDetailsType } from "./utils/types";
 
-const pb = new PocketBase("http://127.0.0.1:8090");
+const pb = new PocketBase(process.env.REACT_APP_API_URL);
 
 export const getCoachs = async () => {
   const records = await pb.collection("coachs").getFullList({
