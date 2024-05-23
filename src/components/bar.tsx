@@ -25,8 +25,13 @@ export default function Bar() {
               {t("Reserve a private lesson")}
             </Link>
           </Button>
+          <Link
+            to={"signup/"}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Button color="inherit">{t("Sign up")}</Button>
+          </Link>
           <Button color="inherit">{t("Login")}</Button>
-          <Button color="inherit">{t("Sign up")}</Button>
         </Toolbar>
       </AppBar>
     </Box>
