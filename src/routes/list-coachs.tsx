@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
-import CoachCard from "../components/coach-card";
-import { getCoachs } from "../coachs";
 import { useLoaderData } from "react-router-dom";
+import { getCoachs } from "../coachs";
+import CoachCard from "../components/coach-card";
 import { CoachType } from "../utils/types";
 
 export async function loader() {
@@ -24,6 +24,7 @@ export default function Coachs() {
     >
       {coachs.map((coach: CoachType) => (
         <CoachCard
+          key={coach.id}
           id={coach.id}
           fullName={coach.fullName}
           rating={coach.rating}

@@ -1,8 +1,5 @@
-import PocketBase from "pocketbase";
-
 import { CoachType, CoachDetailsType } from "./utils/types";
-
-const pb = new PocketBase(process.env.REACT_APP_API_URL);
+import { pb } from "./utils/pocketbase";
 
 export const getCoachs = async () => {
   const records = await pb.collection("coachs").getFullList({

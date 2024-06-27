@@ -19,7 +19,8 @@ const theme = createTheme({
   palette: {
     // primary: deepOrange,
     primary: {
-      main: "#f07c0b",
+      // main: "#f07c0b",
+      main: "#001d33",
     },
     secondary: { main: blue[500] },
   },
