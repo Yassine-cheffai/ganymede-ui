@@ -26,6 +26,15 @@ i18n
           "Validate Password": "Validate Password",
           Create: "Create",
           "Password is not matching": "Password is not matching",
+          "Verify the username, the username should not contains spaces":
+            "Verify the username, the username should not contains spaces",
+          "Failed to sign up": "Failed to sign up",
+          "Verify the last name": "Verify the last name",
+          "Verify the email": "Verify the email",
+          "Verify the password, make sure that password is at least 6 characters long":
+            "Verify the password, make sure that password is at least 6 characters long",
+          "I'm a professor": "I'm a professor",
+          "I'm a student": "I'm a student",
         },
       },
       fr: {
@@ -46,6 +55,15 @@ i18n
           "Validate Password": "Valider le mot de passe",
           Create: "Créer",
           "Password is not matching": "Le mot de passe ne correspond pas",
+          "Verify the username, the username should not contains spaces":
+            "Vérifiez le nom d'utilisateur, le nom d'utilisateur ne doit pas contenir d'espaces",
+          "Failed to sign up": "Échec de l'inscription",
+          "Verify the last name": "Vérifiez le nom",
+          "Verify the email": "Vérifiez l'e-mail",
+          "Verify the password, make sure that password is at least 6 characters long":
+            "Vérifiez le mot de passe, assurez-vous que ce mot de passe comporte au moins 6 caractères.",
+          "I'm a professor": "Je suis un professeur",
+          "I'm a student": "Je suis un étudiant",
         },
       },
     },

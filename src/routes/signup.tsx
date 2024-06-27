@@ -49,7 +49,7 @@ export default function SignUp() {
     } else {
       setMismatchedPassword(false);
     }
-    if (formData.userName === "") {
+    if (formData.userName === "" || formData.userName.includes(" ")) {
       setBadUserName(true);
       controlFailed = true;
     } else {
@@ -115,7 +115,7 @@ export default function SignUp() {
       autoComplete="off"
     >
       <Typography variant="h4">{t("Create Account")}</Typography>
-      {signupFailed && <Alert severity="error">failed to signup</Alert>}
+      {signupFailed && <Alert severity="error">{t("Failed to sign up")}</Alert>}
       <TextField
         required
         fullWidth
@@ -127,7 +127,7 @@ export default function SignUp() {
         error={badUserName}
         helperText={
           badUserName
-            ? "verify the username, the username should not contains spaces"
+            ? t("Verify the username, the username should not contains spaces")
             : ""
         }
       />
@@ -140,7 +140,7 @@ export default function SignUp() {
         value={formData.name}
         onChange={handleChange}
         error={badName}
-        helperText={badName ? "verify the last name" : ""}
+        helperText={badName ? t("Verify the last name") : ""}
       />
       <TextField
         required
@@ -151,7 +151,7 @@ export default function SignUp() {
         value={formData.email}
         onChange={handleChange}
         error={badEmail}
-        helperText={badEmail ? "verify the email" : ""}
+        helperText={badEmail ? t("Verify the email") : ""}
       />
       <TextField
         required
@@ -165,7 +165,9 @@ export default function SignUp() {
         error={badPassword}
         helperText={
           badPassword
-            ? "verify the password, make sure that password is at least 6 characters long"
+            ? t(
+                "Verify the password, make sure that password is at least 6 characters long",
+              )
             : ""
         }
       />
@@ -193,8 +195,8 @@ export default function SignUp() {
           mt: 2,
         }}
       >
-        <ToggleButton value="coach">i'm a coach</ToggleButton>
-        <ToggleButton value="student">i'm a student</ToggleButton>
+        <ToggleButton value="coach">{t("I'm a professor")}</ToggleButton>
+        <ToggleButton value="student">{t("I'm a student")}</ToggleButton>
       </ToggleButtonGroup>
       <Button
         variant="contained"
