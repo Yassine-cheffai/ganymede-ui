@@ -87,14 +87,11 @@ export default function SignUp() {
       name: formData.name,
       type: alignment,
     };
-    console.log(data);
     try {
       let record = await pb.collection("users").create(data);
-      console.log(record);
 
-      navigate("/");
+      navigate("../signin/");
     } catch (error) {
-      console.error(error);
       setSignupFailed(true);
     }
   };
@@ -114,8 +111,19 @@ export default function SignUp() {
       noValidate
       autoComplete="off"
     >
-      <Typography variant="h4">{t("Create Account")}</Typography>
-      {signupFailed && <Alert severity="error">{t("Failed to sign up")}</Alert>}
+      <Typography variant="h4" sx={{ mb: 4 }}>
+        {t("Create Account")}
+      </Typography>
+      {signupFailed && (
+        <Alert
+          severity="error"
+          onClose={() => {
+            setSignupFailed(false);
+          }}
+        >
+          {t("Failed to sign up")}
+        </Alert>
+      )}
       <TextField
         required
         fullWidth

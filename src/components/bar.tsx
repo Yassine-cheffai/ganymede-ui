@@ -31,7 +31,12 @@ export default function Bar() {
           >
             <Button color="inherit">{t("Sign up")}</Button>
           </Link>
-          <Button color="inherit">{t("Login")}</Button>
+          <Link
+            to={"signin/"}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Button color="inherit">{t("Login")}</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

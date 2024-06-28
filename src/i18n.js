@@ -35,6 +35,9 @@ i18n
             "Verify the password, make sure that password is at least 6 characters long",
           "I'm a professor": "I'm a professor",
           "I'm a student": "I'm a student",
+          "Sign In": "Sing In",
+          "Failed to sign in, please verify your username and your password":
+            "Failed to sign in, please verify your username and your password",
         },
       },
       fr: {
@@ -64,6 +67,9 @@ i18n
             "Vérifiez le mot de passe, assurez-vous que ce mot de passe comporte au moins 6 caractères.",
           "I'm a professor": "Je suis un professeur",
           "I'm a student": "Je suis un étudiant",
+          "Sign In": "Se Connecter",
+          "Failed to sign in, please verify your username and your password":
+            "Échec de la connexion, veuillez vérifier votre nom d'utilisateur et votre mot de passe",
         },
       },
     },

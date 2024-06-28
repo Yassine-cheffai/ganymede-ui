@@ -8,6 +8,7 @@ import { blue } from "@mui/material/colors";
 import Root from "./routes/root";
 import LandingPage from "./routes/landingpage";
 import SignUp from "./routes/signup";
+import SingIn from "./routes/signin";
 import Coachs, { loader as coachsLoader } from "./routes/list-coachs";
 import CoachDetails, {
   loader as coachDetailsLoader,
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "signup/",
         element: <SignUp />,
+      },
+      {
+        path: "signin/",
+        element: <SingIn />,
       },
     ],
   },
